@@ -1,0 +1,9 @@
+{
+  "name": "nexa-switch-server",
+  "description": "",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Daniel Giljam",
+  "license": "MIT",
+  "main": "main.ts"
+}
