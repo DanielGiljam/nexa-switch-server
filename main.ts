@@ -56,6 +56,7 @@ app.get("/", (req, res) => {
   console.log(command);
   try {
     execSync(command, { stdio: "inherit" });
+    res.status(200).send();
   } catch (error) {
     console.error(error);
     res.status(500).send();
