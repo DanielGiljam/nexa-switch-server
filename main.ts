@@ -35,7 +35,7 @@ const getCommand = (req: express.Request) => {
   const { pinNumber, emitterId, receiverId, command } = querySchema.parse(
     req.query
   );
-  return `piHomeEasy ${pinNumber} ${emitterId} ${receiverId} ${command}`;
+  return `sudo piHomeEasy ${pinNumber} ${emitterId} ${receiverId} ${command}`;
 };
 
 app.post("/", (req, res) => {

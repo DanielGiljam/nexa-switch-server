@@ -22,14 +22,13 @@ The idea is to use this [`homebridge-http-switch`](https://github.com/Supereg/ho
 
 More information about the radio transmitter and how to connect it to the Pi can also be found on piHomeEasy's GitHub page.
 
-**NOTE!**
-After you've installed piHomeEasy, you need to make sure it's executable by others and that it has the setuid bit set.
-Example of what piHomeEasy's properties should look like:
+The user that runs the server must be able to run `piHomeEasy` as root. So if your used is called `nexa-switch-server` and the path to `piHomeEasy` on your machine is `/usr/local/bin/piHomeEasy`, then include the following in your `sudoers` config:
 
-```bash
-$ ls -l `which piHomeEasy`
--rwsr-xr-x 1 root staff 19056 Jun 27  2019 /usr/local/bin/piHomeEasy
 ```
+nexa-switch-server ALL=(root) NOPASSWD: /usr/local/bin/piHomeEasy
+```
+
+Don't forget to use `visudo` to edit your `sudoers` configuration so that you don't accidentally corrupt it and lock yourself out your system!
 
 ## API Reference
 
