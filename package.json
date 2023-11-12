@@ -1,9 +1,28 @@
 {
   "name": "nexa-switch-server",
-  "description": "",
+  "description": "Simple HTTP server which exposes a REST API for controlling Nexa switches",
   "version": "0.0.0",
   "private": true,
-  "author": "Daniel Giljam",
   "license": "MIT",
-  "main": "main.ts"
+  "author": {
+    "name": "Daniel Giljam",
+    "url": "https://github.com/DanielGiljam"
+  },
+  "homepage": "https://github.com/DanielGiljam/nexa-switch-server#readme",
+  "bugs": "https://github.com/DanielGiljam/nexa-switch-server/issues?q=is%3Aissue+is%3Aopen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielGiljam/nexa-switch-server.git"
+  },
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node --transpile-only main.ts"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "ts-node": "^10.9.1",
+    "zod": "^3.22.4",
+    "zod-validation-error": "^2.1.0"
+  }
 }
