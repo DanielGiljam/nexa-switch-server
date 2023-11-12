@@ -23,11 +23,11 @@ const querySchema = z.object({
     .number()
     .int()
     .pipe(z.union([z.number().min(0).max(12), z.number().min(14).max(16)])),
-  emitterId: z.coerce.number().int().gte(0).lte(67108863),
+  emitterId: z.coerce.number().int().gt(0).lt(67108863),
   receiverId: z.coerce
     .number()
     .int()
-    .pipe(z.union([z.literal(-1), z.number().gte(0).lte(15)])),
+    .pipe(z.union([z.literal(-1), z.number().gt(0).lt(15)])),
   command: z.enum(["on", "off"]),
 });
 
