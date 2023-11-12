@@ -38,7 +38,7 @@ const getCommand = (req: express.Request) => {
   return `piHomeEasy ${pinNumber} ${emitterId} ${receiverId} ${command}`;
 };
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
   let command: string;
   try {
     command = getCommand(req);
