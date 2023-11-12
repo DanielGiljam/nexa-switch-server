@@ -3,6 +3,15 @@ import morgan from "morgan";
 import { execSync } from "child_process";
 import z from "zod";
 import { fromZodError } from "zod-validation-error";
+import arg from "arg";
+
+const args = arg(
+  {
+    "--port": Number,
+    "-p": "--port",
+  },
+  { permissive: true }
+);
 
 const app = express();
 
@@ -52,3 +61,9 @@ app.get("/", (req, res) => {
     res.status(500).send();
   }
 });
+
+const port = args["--port"] ?? 3000;
+
+app.listen(port, () =>
+  console.log(`nexa-switch-server listening on port ${port}`)
+);

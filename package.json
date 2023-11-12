@@ -19,6 +19,7 @@
     "start": "ts-node --transpile-only main.ts"
   },
   "dependencies": {
+    "arg": "^5.0.2",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "ts-node": "^10.9.1",
